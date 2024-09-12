@@ -1,0 +1,48 @@
+package javalab;
+import java.util.Scanner;
+class Employee13{
+	double salary,DA,HRA,salary1;
+	Employee13(double salary,double DA,double HRA){
+		this.salary=salary;
+		this.DA=DA;
+		this.HRA=HRA;
+	}
+    void display() {
+    	System.out.println("EMPLOYEE..........");
+    }
+    void calcsalary()
+    {
+    	salary1=salary+salary*(DA/100)+salary*(HRA/100);
+    	System.out.println("Gross salary="+salary1);
+    }
+}
+class Engineer extends Employee13{
+	Engineer(double salary,double DA,double HRA){
+		super(salary,DA,HRA);
+	}
+	void display() {
+		super.display();
+		super.calcsalary();
+		System.out.println("ENGINEER..........");
+	}
+	void calcsalary()
+	{
+		System.out.println("Gross salary of the Engineer="+salary1*2);
+	}
+}
+public class methodOverriding{
+	public static void main(String args[]) {
+		double salary,DA,HRA;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter the basic salary of the employee");
+		salary=sc.nextDouble();
+		System.out.println("enter DA% of Employee");
+		DA=sc.nextDouble();
+		System.out.println("enter the HRA% of employee");
+		HRA=sc.nextDouble();
+		Engineer e=new Engineer(salary,DA,HRA);
+		e.display();
+		e.calcsalary();
+		sc.close();
+	}
+}
