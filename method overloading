@@ -1,0 +1,32 @@
+package javalab;
+
+import java.util.Scanner;
+
+class Mover{
+ void area(double radius) {
+	 System.out.println("area of circle="+3.14*radius*radius);
+}
+ void area(int length,int breadth) {
+	 System.out.println("area of the rectangle"+length*breadth);
+ }
+ void area(double breadth,double height) {
+	 System.out.println("area of the triangle"+0.5*breadth*height);
+ }
+}
+ class methodOverloading{
+	public static void main(String[]args) {
+		Mover mo=new Mover ();
+		Scanner sc=new Scanner (System.in);
+		System.out.println("enter the radius of the circle");
+		double r=sc.nextDouble();
+		mo.area(r);
+		System.out.println("enter the length and breadth of the reactangle");
+		int x=sc.nextInt();
+		int y=sc.nextInt();
+		mo.area(x,y);
+	    System.out.println("enter the base and heightof the triangle");
+	    double m=sc.nextDouble();
+	    double n=sc.nextDouble();
+	    mo.area(m,n);
+	}
+ }
