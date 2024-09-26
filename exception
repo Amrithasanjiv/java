@@ -1,17 +1,16 @@
-package javalab;
+	package javalab;
 
 import java.util.Scanner;
 
 public class Exception {
 public static void main(String[]args) {
 	Scanner sc=new Scanner(System.in);
-	int choice=0;
-	while (choice!=3) {
+	char c=0;
+	do {
 	System.out.println("choose an operation");
 	System.out.println("1.Arithmetic operation");
 	System.out.println("2.Array Acess");
-	System.out.println("3.exit");
-		choice= sc.nextInt();
+		 int choice= sc.nextInt();
 		switch(choice) {
 	case 1:
 		try {
@@ -36,14 +35,19 @@ public static void main(String[]args) {
 		catch(ArrayIndexOutOfBoundsException e) {
 			System.out.println("caught an exception:"+e.getMessage());}
 		break;
-	case 3:
-		System.out.println("program succesfully excecuted");
-		break;
-		default:
-		System.out.println("invalid choice.please select 1or2");
-	}
-	}
-			sc.close();
+		     default:
+		     System.out.println("invalid choice.please select 1or2");
+		}
+		System.out.println("do you want to continue? click y for yes or click n for no");
+		c=sc.next().charAt(0);
+		}
+	while(c=='y'||c=='y');
+	     System.out.println("code succesfully excecuted...");
+		sc.close();
 		}
 	}
 	
+		
+			
+		
+
