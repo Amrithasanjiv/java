@@ -1,0 +1,49 @@
+package javalab;
+
+import java.util.Scanner;
+
+public class Exception {
+public static void main(String[]args) {
+	Scanner sc=new Scanner(System.in);
+	int choice=0;
+	while (choice!=3) {
+	System.out.println("choose an operation");
+	System.out.println("1.Arithmetic operation");
+	System.out.println("2.Array Acess");
+	System.out.println("3.exit");
+		choice= sc.nextInt();
+		switch(choice) {
+	case 1:
+		try {
+			System.out.println("enter Numerator");
+			int Num=sc.nextInt();
+			System.out.println("enter Denominator");
+			int Deno=sc.nextInt();
+			int Result= Num/Deno;
+			System.out.println("Result="+Result);
+		}
+		catch( ArithmeticException e) {
+			System.out.println("caught an exception:"+e.getMessage());
+		}
+		break;
+	case 2:
+		int[]numbers= {1,2,3};
+		try {
+			System.out.println("enter array to index");
+			int index=sc.nextInt();
+			System.out.println("element at index"+ index +":"+numbers[index]);
+		}
+		catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("caught an exception:"+e.getMessage());}
+		break;
+	case 3:
+		System.out.println("program succesfully excecuted");
+		break;
+		default:
+		System.out.println("invalid choice.please select 1or2");
+	}
+	}
+			sc.close();
+		}
+	}
+	
